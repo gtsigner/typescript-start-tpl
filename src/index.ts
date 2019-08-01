@@ -10,6 +10,7 @@ import staticServer = require("koa-static");
 import startTask from "./tasker";
 import DemoService from "./services/DemoService";
 import StoreService from "./services/StoreService";
+import {Socket} from "./socket";
 
 process.env.TZ = "Asia/Shanghai";
 
@@ -17,7 +18,7 @@ const path = require('path');
 
 const app = new Koa();
 const IO = require('koa-socket-v1');
-const socket = new IO({});
+const socket = new IO({});//IO
 
 socket.attach(app);
 //static
@@ -34,6 +35,7 @@ app.services = {
 };
 app.logger = logger;
 app.io.app = app;
+app.io.manager = new Socket.SocketManager(app);
 
 //初始化
 app.use(async (ctx: any, next: any) => {

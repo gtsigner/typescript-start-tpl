@@ -4,9 +4,13 @@
     "preserveConstEnums": true,
     "experimentalDecorators": true,
     "outDir": "./build",
+    "strictFunctionTypes": false,
+    "noEmitOnError": false,
+    "esModuleInterop": true,
     "strict": false,
     "allowJs": false,
     "target": "es5",
+
     "lib": [
       "es5",
       "dom",
