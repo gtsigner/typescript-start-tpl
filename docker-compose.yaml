@@ -1,0 +1,12 @@
+version: "3.0"
+services:
+  node-app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "8999:9000"
+    volumes:
+      - "./build:/app/build"
+      - "./package.json:/app/package.json"
+    command: ["node","build/index.js"]

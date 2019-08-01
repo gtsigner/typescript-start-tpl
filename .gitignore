@@ -1,0 +1,11 @@
+.idea
+node_modules
+build
+temp
+release
+*.log
+yarn-error.log
+static
+.env
+*.db
+build
