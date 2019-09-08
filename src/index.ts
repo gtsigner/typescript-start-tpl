@@ -35,7 +35,7 @@ app.services = {
 };
 app.logger = logger;
 app.io.app = app;
-app.io.manager = new Socket.SocketManager(app);
+app.io.manager = new Socket.SocketManager(app.io);
 
 //初始化
 app.use(async (ctx: any, next: any) => {
